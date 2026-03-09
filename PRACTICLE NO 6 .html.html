@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>USER REGESTRATION FORM</title>
+
+<style>
+body{
+font-family: Arial;
+background:#e9f1f7;
+display:flex;
+justify-content:center;
+align-items:center;
+height:100vh;
+}
+
+.form-box{
+background:white;
+padding:20px;
+width:300px;
+border-radius:8px;
+box-shadow:0 0 8px gray;
+}
+
+h3{
+text-align:center;
+}
+
+input[type=text]{
+width:100%;
+padding:7px;
+margin:6px 0;
+border:1px solid #ccc;
+border-radius:4px;
+}
+
+button{
+width:100%;
+padding:8px;
+background:#007bff;
+color:white;
+border:none;
+border-radius:4px;
+cursor:pointer;
+}
+
+button:hover{
+background:#0056b3;
+}
+</style>
+
+</head>
+
+<body>
+
+<div class="form-box">
+
+<h3>Register Here</h3>
+
+<form>
+
+<label>First Name</label>
+<input type="text" placeholder="First Name">
+
+<label>Last Name</label>
+<input type="text" placeholder="Last Name">
+
+<p><b>Favorite Language</b></p>
+<input type="radio" name="lang"> HTML
+<input type="radio" name="lang"> CSS
+<input type="radio" name="lang"> JavaScript
+
+<p><b>Your Vehicles</b></p>
+<input type="checkbox"> Bike
+<input type="checkbox"> Car
+<input type="checkbox"> cycle
+
+<br><br>
+
+<button>Submit</button>
+
+</form>
+
+</div>
+
+</body>
+</html>
