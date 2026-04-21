@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Basic HTML Webpage</title>
+</head>
+
+<body>
+
+    <!-- Header Section -->
+    <h1 align="center">My First HTML5 Webpage</h1>
+
+    <!-- Marquee -->
+    <marquee direction="left" scrollamount="5">
+        Welcome to Web Designing Lab Practical - HTML5 Elements Demonstration
+    </marquee>
+
+    <hr>
+
+    <!-- Text Formatting -->
+    <h2>Text Formatting</h2>
+    <p>
+        This is <b>bold</b>, <i>italic</i>, <u>underlined</u> and <strong>important text</strong>.
+    </p>
+
+    <hr>
+
+    <!-- Lists -->
+    <h2>Types of Lists</h2>
+
+    <h3>1. Unordered List</h3>
+    <ul>
+        <li>HTML</li>
+        <li>CSS</li>
+        <li>JavaScript</li>
+    </ul>
+
+    <h3>2. Ordered List</h3>
+    <ol>
+        <li>Install Editor</li>
+        <li>Write Code</li>
+        <li>Run Program</li>
+    </ol>
+
+    <h3>3. Description List</h3>
+    <dl>
+        <dt>HTML</dt>
+        <dd>Hyper Text Markup Language</dd>
+
+        <dt>CSS</dt>
+        <dd>Cascading Style Sheets</dd>
+    </dl>
+
+    <hr>
+
+    <!-- Hyperlinks -->
+    <h2>Hyperlinks</h2>
+
+    <!-- External Link -->
+    <p>
+        Visit External Website: 
+        <a href="https://www.google.com" target="_blank">Google</a>
+    </p>
+
+    <!-- Internal Link -->
+    <p>
+        Go to bottom section:
+        <a href="#bottom">Click Here</a>
+    </p>
+
+    <!-- Email Link -->
+    <p>
+        Send Email:
+        <a href="mailto:student@example.com">Click to Email</a>
+    </p>
+
+    <hr>
+
+    <!-- Image -->
+    <h2>Image Section</h2>
+    <img src="https://via.placeholder.com/300"
+         alt="Sample Image"
+         width="300"
+         height="200">
+
+    <hr>
+
+    <!-- Bottom Section (Internal Link Target) -->
+    <h2 id="bottom">Bottom Section</h2>
+    <p>This is the bottom of the webpage (internal link target).</p>
+
+</body>
+</html>
