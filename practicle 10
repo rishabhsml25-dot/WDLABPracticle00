@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Iframe Demo - Webpage, Map, Video</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+            background-color: #f0f0f0;
+        }
+        h1 {
+            text-align: center;
+        }
+        .section {
+            margin-bottom: 40px;
+        }
+        iframe {
+            border: 2px solid black;
+            border-radius: 8px;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>HTML5 Iframe Demonstration</h1>
+
+    <!-- External Webpage -->
+    <div class="section">
+        <h2>Embedded External Webpage</h2>
+        <iframe 
+    src="https://en.wikipedia.org/wiki/Google"
+    width="100%" 
+    height="400"
+    title="Google Wikipedia Page">
+</iframe>
+    </div>
+
+    <!-- Google Map -->
+    <div class="section">
+        <h2>Embedded Google Map (Nagpur)</h2>
+        <iframe
+            src="https://www.google.com/maps?q=Nagpur&output=embed"
+            width="100%"
+            height="350"
+            style="border:0;"
+            allowfullscreen=""
+            loading="lazy"
+            title="Nagpur Map">
+        </iframe>
+    </div>
+
+    <!-- YouTube Video -->
+    <div class="section">
+        <h2>Embedded YouTube Video</h2>
+        <iframe 
+            width="100%" 
+            height="350"
+            src="https://www.youtube.com/embed/dQw4w9WgXcQ"
+            title="YouTube video player"
+            frameborder="0"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+            allowfullscreen>
+        </iframe>
+    </div>
+
+</body>
+</html>
