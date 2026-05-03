@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Responsive CSS3 Design</title>
+
+    <!-- Google Font -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
+
+    <!-- Font Awesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+
+    <style>
+        body {
+            font-family: 'Poppins', sans-serif;
+            margin: 0;
+            padding: 0;
+            background: #f4f4f4;
+        }
+
+        header {
+            background: #333;
+            color: white;
+            text-align: center;
+            padding: 20px;
+        }
+
+        nav {
+            display: flex;
+            justify-content: center;
+            background: #555;
+        }
+
+        nav a {
+            color: white;
+            padding: 14px 20px;
+            text-decoration: none;
+        }
+
+        nav a:hover {
+            background: #000;
+        }
+
+        /* Multi-column section */
+        .columns {
+            padding: 20px;
+            column-count: 3;
+            column-gap: 30px;
+            column-rule: 2px solid gray;
+        }
+
+        /* Cards */
+        .container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+
+        .card {
+            background: white;
+            margin: 15px;
+            padding: 20px;
+            width: 250px;
+            text-align: center;
+            border-radius: 10px;
+            transition: transform 0.5s;
+        }
+
+        /* Transform */
+        .card:hover {
+            transform: scale(1.1) rotate(2deg);
+        }
+
+        /* Animation */
+        .icon {
+            font-size: 40px;
+            color: #333;
+            animation: bounce 2s infinite;
+        }
+
+        @keyframes bounce {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-10px); }
+        }
+
+        footer {
+            text-align: center;
+            background: #333;
+            color: white;
+            padding: 10px;
+        }
+
+        /* Responsive Design */
+        @media screen and (max-width: 768px) {
+            .columns {
+                column-count: 1;
+            }
+
+            nav {
+                flex-direction: column;
+            }
+
+            .container {
+                flex-direction: column;
+                align-items: center;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+<header>
+    <h1>Responsive Web Design using CSS3</h1>
+</header>
+
+<nav>
+    <a href="#">Home</a>
+    <a href="#">About</a>
+    <a href="#">Services</a>
+    <a href="#">Contact</a>
+</nav>
+
+<!-- Multi Column Content -->
+<section class="columns">
+    <p>
+        Responsive Web Design ensures that web pages adapt to different screen sizes.
+        CSS3 provides powerful features like media queries, animations, and transformations.
+        Multi-column layout helps structure content like newspapers.
+        CSS3 also supports custom fonts and icons for modern UI design.
+    </p>
+</section>
+
+<!-- Cards Section -->
+<div class="container">
+
+    <div class="card">
+        <i class="fas fa-mobile-alt icon"></i>
+        <h3>Responsive</h3>
+        <p>Adapts to all devices using media queries.</p>
+    </div>
+
+    <div class="card">
+        <i class="fas fa-columns icon"></i>
+        <h3>Columns</h3>
+        <p>Displays content in multiple columns.</p>
+    </div>
+
+    <div class="card">
+        <i class="fas fa-magic icon"></i>
+        <h3>Animation</h3>
+        <p>Smooth transitions and keyframe animations.</p>
+    </div>
+
+    <div class="card">
+        <i class="fas fa-sync icon"></i>
+        <h3>Transform</h3>
+        <p>Scale, rotate and translate elements.</p>
+    </div>
+
+</div>
+
+<footer>
+    <p>© 2026 Web Designing Lab</p>
+</footer>
+
+</body>
+</html>
