@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>HTML5 APIs Advanced Demo</title>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            background: #f0f2f5;
+        }
+
+        h1 {
+            background: #222;
+            color: white;
+            padding: 15px;
+        }
+
+        section {
+            background: white;
+            margin: 20px auto;
+            padding: 20px;
+            width: 80%;
+            border-radius: 10px;
+            box-shadow: 0 0 10px gray;
+        }
+
+        /* Drag & Drop */
+        #dragBox {
+            width: 120px;
+            height: 120px;
+            background: #ff4757;
+            color: white;
+            line-height: 120px;
+            margin: 20px auto;
+            border-radius: 10px;
+            cursor: grab;
+        }
+
+        #dropArea {
+            width: 220px;
+            height: 220px;
+            border: 3px dashed #333;
+            margin: auto;
+            line-height: 220px;
+            border-radius: 10px;
+        }
+
+        /* Buttons */
+        button {
+            margin: 10px;
+            padding: 10px 15px;
+            border: none;
+            background: #333;
+            color: white;
+            cursor: pointer;
+            border-radius: 5px;
+        }
+
+        button:hover {
+            background: #555;
+        }
+
+        input {
+            padding: 8px;
+            width: 200px;
+        }
+
+        p {
+            font-weight: bold;
+        }
+    </style>
+</head>
+
+<body>
+
+<h1>HTML5 APIs (Drag & Drop, Geolocation, Web Storage)</h1>
+
+<!-- Drag & Drop -->
+<section>
+    <h2>Drag and Drop</h2>
+
+    <div id="dragBox" draggable="true" ondragstart="drag(event)">
+        Drag Me
+    </div>
+
+    <div id="dropArea" ondrop="drop(event)" ondragover="allowDrop(event)">
+        Drop Here
+    </div>
+
+    <p id="dropMsg"></p>
+</section>
+
+<!-- Geolocation -->
+<section>
+    <h2>Geolocation</h2>
+
+    <button onclick="getLocation()">Get My Location</button>
+
+    <p id="location"></p>
+</section>
+
+<!-- Web Storage -->
+<section>
+    <h2>Web Storage</h2>
+
+    <input type="text" id="dataInput" placeholder="Enter data">
+    <br>
+
+    <button onclick="saveLocal()">Save Local</button>
+    <button onclick="getLocal()">Get Local</button>
+
+    <button onclick="saveSession()">Save Session</button>
+    <button onclick="getSession()">Get Session</button>
+
+    <button onclick="clearAll()">Clear All</button>
+
+    <p id="storageOutput"></p>
+</section>
+
+<script>
+    // Drag & Drop
+    function allowDrop(e) {
+        e.preventDefault();
+    }
+
+    function drag(e) {
+        e.dataTransfer.setData("text", e.target.id);
+    }
+
+    function drop(e) {
+        e.preventDefault();
+        let data = e.dataTransfer.getData("text");
+        let element = document.getElementById(data);
+
+        e.target.innerHTML = "";
+        e.target.appendChild(element);
+
+        document.getElementById("dropMsg").innerHTML = "Element Dropped Successfully!";
+    }
+
+    // Geolocation
+    function getLocation() {
+        if (navigator.geolocation) {
+            document.getElementById("location").innerHTML = "Fetching location...";
+            navigator.geolocation.getCurrentPosition(showPosition, showError);
+        } else {
+            document.getElementById("location").innerHTML = "Geolocation not supported";
+        }
+    }
+
+    function showPosition(pos) {
+        let lat = pos.coords.latitude;
+        let lon = pos.coords.longitude;
+
+        document.getElementById("location").innerHTML =
+            "Latitude: " + lat +
+            "<br>Longitude: " + lon +
+            `<br><a href="https://www.google.com/maps?q=${lat},${lon}" target="_blank">View on Map</a>`;
+    }
+
+    function showError(err) {
+        document.getElementById("location").innerHTML =
+            "Error: Permission denied or location unavailable";
+    }
+
+    // Web Storage
+    function saveLocal() {
+        let data = document.getElementById("dataInput").value;
+        localStorage.setItem("localData", data);
+        alert("Saved in Local Storage");
+    }
+
+    function getLocal() {
+        let data = localStorage.getItem("localData");
+        document.getElementById("storageOutput").innerHTML = "Local: " + data;
+    }
+
+    function saveSession() {
+        let data = document.getElementById("dataInput").value;
+        sessionStorage.setItem("sessionData", data);
+        alert("Saved in Session Storage");
+    }
+
+    function getSession() {
+        let data = sessionStorage.getItem("sessionData");
+        document.getElementById("storageOutput").innerHTML += "<br>Session: " + data;
+    }
+
+    function clearAll() {
+        localStorage.clear();
+        sessionStorage.clear();
+        document.getElementById("storageOutput").innerHTML = "All data cleared!";
+    }
+
+    // Auto load saved data
+    window.onload = function() {
+        let data = localStorage.getItem("localData");
+        if (data) {
+            document.getElementById("storageOutput").innerHTML = "Saved Local: " + data;
+        }
+    }
+</script>
+
+</body>
+</html>
