@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Student Feedback Form</title>
+</head>
+<link rel="stylesheet" href="style.css">
+
+<body>
+
+    <!-- Header Section -->
+    <header>
+        <h1>Student Feedback Form</h1>
+    </header>
+
+    <!-- Main Form Section -->
+    <main>
+        <form>
+
+            <!-- Student Info -->
+            <section>
+                <h2>Student Information</h2>
+
+                <label>Full Name:</label><br>
+                <input type="text" required><br><br>
+
+                <label>Email:</label><br>
+                <input type="email" required><br><br>
+
+                <label>Course Name:</label><br>
+                <input type="text" required><br><br>
+            </section>
+
+            <!-- Course Rating -->
+            <section>
+                <h2>Course Rating</h2>
+
+                <label for="rating">
+                    Rate the course (1 to 10): 
+                    <span id="ratingValue">5</span>
+                </label><br>
+
+                <input 
+                    type="range" 
+                    id="rating" 
+                    name="rating" 
+                    min="1" 
+                    max="10" 
+                    value="5"
+                    oninput="document.getElementById('ratingValue').innerText = this.value"
+                >
+                <br><br>
+            </section>
+
+            <!-- Difficulty Level -->
+            <section>
+                <h2>Course Difficulty</h2>
+
+                <p>Select difficulty level:</p>
+
+                <input type="radio" id="easy" name="difficulty" value="Easy" required>
+                <label for="easy">Easy</label><br>
+
+                <input type="radio" id="medium" name="difficulty" value="Medium" required>
+                <label for="medium">Medium</label><br>
+
+                <input type="radio" id="hard" name="difficulty" value="Hard" required>
+                <label for="hard">Hard</label><br><br>
+            </section>
+
+            <!-- Feedback Comments -->
+            <section>
+                <h2>Your Feedback</h2>
+
+                <label for="comments">Comments:</label><br>
+                <textarea id="comments" name="comments" rows="5" cols="40" required></textarea><br><br>
+            </section>
+
+            <!-- Submit -->
+            <section>
+                <button type="submit">Submit Feedback</button>
+            </section>
+
+        </form>
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        <p>© 2026 Student Feedback System</p>
+    </footer>
+
+</body>
+</html>
