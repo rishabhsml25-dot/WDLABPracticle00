@@ -1,0 +1,85 @@
+/* Body Styling */
+body {
+    font-family: Arial, sans-serif;
+    background: linear-gradient(to right, #3e7369, #ACB6E5);
+    margin: 0;
+    padding: 0;
+}
+
+/* Header */
+header {
+    background-color: #0603001e;
+    color: rgb(158, 243, 178);
+    text-align: center;
+    padding: 15px;
+}
+
+/* Footer */
+footer {
+    background-color: #2c3e50;
+    color: white;
+    text-align: center;
+    padding: 5px;
+    position: fixed;
+    width: 100%;
+    bottom: 0;
+}
+
+/* Main Form Container */
+main {
+    display: flex;
+    justify-content: center;
+    margin-top: 40px;
+}
+
+/* Form Box */
+form {
+    background-color: rgb(168, 166, 170);
+    padding: 20px;
+    border-radius: 10px;
+    width: 400px;
+    box-shadow: 0px 0px 10px rgba(20, 89, 145, 0.2);
+}
+
+/* Section Styling */
+section {
+    margin-bottom: 20px;
+    padding: 10px;
+    border: 1px solid #7e797d22;
+    border-radius: 8px;
+}
+
+/* Headings */
+h2 {
+    color: #0d1003;
+}
+
+/* Input Fields */
+input, textarea {
+    width: 95%;
+    padding: 8px;
+    margin-top: 5px;
+    border: 1px solid #efffba;
+    border-radius: 5px;
+}
+
+/* Radio Buttons */
+input[type="radio"] {
+    width: auto;
+}
+
+/* Button */
+button {
+    background-color: #3498db;
+    color: white;
+    padding: 19px;
+    border: none;
+    width: 100%;
+    border-radius: 50px;
+    cursor: pointer;
+    font-size: 14px;
+}
+
+button:hover {
+    background-color: #2980b9;
+}
